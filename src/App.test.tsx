@@ -1,9 +1,13 @@
-import React from 'react';
+// import React from 'react';
 import { render, screen } from '@testing-library/react';
+import { isIfStatement } from 'typescript';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+
+
+describe("App",() => {
+  it("should display a message input with an accessible label", () => {
+    render(<App />);
+    screen.getByLabelText("Message");
+  });
 });

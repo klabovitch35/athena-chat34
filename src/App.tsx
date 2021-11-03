@@ -1,25 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Form from "@athena/forge/Form";
+import Root from "@athena/forge/Root";
+import "@athena/forge/dist/forge.css";
+import Textarea from "@athena/forge/Textarea";
+import FormField from "@athena/forge/FormField"
 
-function App() {
+
+const user = {
+  name: "Cory",
+  email: "c@h.com"
+};
+
+const {name : myName} = user;
+
+export function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Root>
+      <h1>Chat</h1>
+      <Form>
+        <FormField labelText="Message" id = "message" inputAs={Textarea} />
+      </Form>
+    </Root>
   );
 }
 
